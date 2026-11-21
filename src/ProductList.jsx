@@ -262,7 +262,8 @@ function ProductList({ onHomeClick }) {
 
         setAddedToCart((prevState) => ({
             ...prevState,
-            [product.name]: true,
+            //[product.name]: true,
+            [index.name]: true,
         }));
     };
     return (
@@ -307,6 +308,7 @@ function ProductList({ onHomeClick }) {
                             <button
                                 className="product-button"
                                 onClick={() => handleAddToCart(plant)} // Handle adding plant to cart
+                                disabled= {addedToCart[plant.name]}
                             >
                                 Add to Cart
                             </button>
